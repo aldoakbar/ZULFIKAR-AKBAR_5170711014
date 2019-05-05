@@ -1,0 +1,74 @@
+#include <conio.h>
+#include <iostream>
+using namespace::std;
+main(){
+int harga_barang, harus, satuan, total_harga, option, pembayaran;
+ int kembalian, kurang;
+ float diskon;
+{
+cout<<" SELAMAT DATANG DI KASIR "<<endl;
+cout<<" ----------------------- "<<endl;
+cout<<" \n ======================== "<<endl;
+cout<<" xx   OPTION           xx "<<endl;
+cout<<" xx   1. Member        xx "<<endl;
+cout<<" xx   2. Bukan Member  xx "<<endl;
+cout<<" ======================== "<<endl;
+option:
+cout<<" \n Pilih Option [1/2] : "; cin>>option;
+
+
+
+  {
+      if ((option != 1)&&(option != 2))
+      {
+          cout<<" Maaf!! Option Salah"<<endl;
+       cout<<endl;
+       goto option;
+       }
+   else
+      {
+          cout<<endl;}
+  }
+   cout<<" -----------------------"<<endl;
+   cout<<" Masukkan Harga Barang : Rp. "; cin>>harga_barang;
+   cout<<" Masukkan Satuan       : "; cin>>satuan;
+   total_harga=satuan*harga_barang;
+   cout<<" Total Harga           = Rp. "<<total_harga<<endl<<endl;
+   if (option==1)
+            {
+               {
+                    diskon=total_harga*0.05;
+                cout<<" Potongan 5% : Rp. "<<diskon<<endl<<endl;
+                }
+           }
+   else if (option==2)
+         {
+            {
+                cout<<endl;
+                }
+         }
+   else
+      cout<<endl;
+   cout<<" ----------------------- "<<endl;
+   harus = total_harga-diskon;
+   cout<<" Harus Di Bayar : Rp. "<<harus<<endl;
+   cout<<" Pembayaran     : Rp. "; cin>>pembayaran;
+   if (pembayaran > harus)
+      {
+          kembalian = pembayaran - harus;
+       cout<<" Kembalian  : Rp. "<<kembalian<<endl;
+       }
+      else if (pembayaran<harus)
+         {
+             kurang = harus - pembayaran;
+          cout<<" Kurang  : Rp. "<<kurang<<endl;
+          }
+   else
+      {
+          cout<<" Uang Anda Pas "<<endl<<endl;
+          }
+   cout<<" ======================="<<endl;
+   cout<<" Terima Kasih Telah Berkunjung "<<endl<<endl;
+   }
+   getch();
+}
